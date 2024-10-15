@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAR GAME</title>
+</head>
+<body>
+    <h1>WAR GAME</h1>
+
+    <form action="/soldiers" method="post">
+        <input name="name" type="text" placeholder="Soldier Name" />
+        <input name="rank" type="text" placeholder="Soldier rank" />
+        <input name="allegiance" type="text" placeholder="Soldier Allegiance" />
+        <button type="submit">Submit</button>
+    </form>
+    <ul class="soldiers">
+
+    <%for(let i=0;i < soldiers.length;i++) { %>
+        <% if (soldiers[i].allegiance){ %>
+        <li class="soldier">
+            <span><%= soldiers[i].name %></span>
+            <span><%= soldiers[i].rank %></span>
+            <span><%= soldiers[i].allegiance %></span>
+        </li>
+    <% }} %>
+    </ul>
+
+    <div>
+        <h2>Germans Attack!</h2>
+        <p>Replace Soviet soldiers with German ones</p>
+        <button id="update-button">ATTACK</button>
+      </div>
+      
+      <div>
+          <h2>Red Army Attack!</h2>
+          <p>Winter is here! FIGHT!!!</p>
+          <button id="delete-button">ATTACK</button>
+    </div>
+    <div id="message"></div>
+
+
+    <script src='/main.js'></script>
+</body>
+</html>
